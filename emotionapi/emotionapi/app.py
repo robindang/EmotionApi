@@ -5,7 +5,7 @@ from flask import Flask, render_template
 from emotionapi import commands, public, user
 from emotionapi.extensions import bcrypt, cache, csrf_protect, db, debug_toolbar, login_manager, migrate, webpack
 from emotionapi.settings import ProdConfig
-
+# from emotionapi.public.cache import cache
 
 def create_app(config_object=ProdConfig):
     """An application factory, as explained here: http://flask.pocoo.org/docs/patterns/appfactories/.
@@ -19,6 +19,7 @@ def create_app(config_object=ProdConfig):
     register_errorhandlers(app)
     register_shellcontext(app)
     register_commands(app)
+    # cache.init_app(app)
     return app
 
 

@@ -4,11 +4,13 @@ from flask import Blueprint, flash, redirect, render_template, request, url_for,
 from flask_login import login_required, login_user, logout_user
 
 from emotionapi.extensions import login_manager
+# from emotionapi.public.cache import cache
 from emotionapi.public.forms import LoginForm
 from emotionapi.user.forms import RegisterForm
 from emotionapi.user.models import User
 from emotionapi.utils import flash_errors
 from emotionapi.emotion_analyzer import EmotionAnalyzer
+from emotionapi.speech_recognizer import SpeechRecognizer
 import os.path
 
 blueprint = Blueprint('public', __name__, static_folder='../static')
@@ -66,13 +68,21 @@ def about():
 
 
 @blueprint.route('/api/emotions', methods=['GET', 'POST'])
+# @cache.cached(timeout=5)
 def get_emotions():
     model_json = get_path('model.json')
     model_h5 = get_path('model.h5')
     cascade = get_path('haarcascade_frontalface_default.xml')
     emotion_analyzer = EmotionAnalyzer(model_json, model_h5, cascade)
-    return jsonify({'emotions': emotion_analyzer.get_emotions()})
-    # return jsonify({'tasks': ''})
+    return jsonify({'emotion': emotion_analyzer.get_emotions()})
+
+@blueprint.route('/api/speech', methods=['GET', 'POST'])
+# @cache.cached(timeout=5)
+def get_speech():
+    speech_recognizer = SpeechRecognizer()
+    speech = speech_recognizer.getSpeechEmotions()
+    print speech
+    return jsonify({'speech': speech})
 
 def get_path(file_name):
     return os.path.dirname(__file__) + '/../' + file_name
