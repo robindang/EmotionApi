@@ -8,6 +8,8 @@ from emotionapi.public.forms import LoginForm
 from emotionapi.user.forms import RegisterForm
 from emotionapi.user.models import User
 from emotionapi.utils import flash_errors
+from emotionapi.emotion_analyzer import EmotionAnalyzer
+import os.path
 
 blueprint = Blueprint('public', __name__, static_folder='../static')
 
@@ -65,4 +67,13 @@ def about():
 
 @blueprint.route('/api/emotions', methods=['GET', 'POST'])
 def get_emotions():
-    return jsonify({'tasks': ''})
+    model_json = get_path('model.json')
+    model_h5 = get_path('model.h5')
+    cascade = get_path('haarcascade_frontalface_default.xml')
+    emotion_analyzer = EmotionAnalyzer(model_json, model_h5, cascade)
+    return jsonify({'emotions': emotion_analyzer.get_emotions()})
+    # return jsonify({'tasks': ''})
+
+def get_path(file_name):
+    return os.path.dirname(__file__) + '/../' + file_name
+
