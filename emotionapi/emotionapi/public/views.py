@@ -74,15 +74,15 @@ def get_emotions():
     model_h5 = get_path('model.h5')
     cascade = get_path('haarcascade_frontalface_default.xml')
     emotion_analyzer = EmotionAnalyzer(model_json, model_h5, cascade)
-    return jsonify({'emotion': emotion_analyzer.get_emotions()})
+    emotions = emotion_analyzer.get_emotions()
+    return jsonify(emotions)
 
 @blueprint.route('/api/speech', methods=['GET', 'POST'])
 # @cache.cached(timeout=5)
 def get_speech():
     speech_recognizer = SpeechRecognizer()
-    speech = speech_recognizer.getSpeechEmotions()
-    print speech
-    return jsonify({'speech': speech})
+    speech = speech_recognizer.getEmotions()
+    return jsonify({"text": speech[0], "emotions":speech[1]})
 
 def get_path(file_name):
     return os.path.dirname(__file__) + '/../' + file_name

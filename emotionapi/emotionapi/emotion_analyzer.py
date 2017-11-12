@@ -3,6 +3,8 @@ import sys
 import json
 import numpy as np
 from keras.models import model_from_json
+import os.path
+from flask import Blueprint, flash, redirect, render_template, request, url_for, jsonify
 
 class EmotionAnalyzer(object):
     emotions = ['angry', 'fear', 'happy', 'sad', 'surprise', 'neutral']
@@ -40,7 +42,8 @@ class EmotionAnalyzer(object):
         image = resized_img.reshape(1, 1, 48, 48)
         list_of_list = self.model.predict(image, batch_size=1, verbose=1)
         angry, fear, happy, sad, surprise, neutral = [prob for lst in list_of_list for prob in lst]
-        return self.choose_emotion([angry, fear, happy, sad, surprise, neutral])
+        return {"angry": float(angry), "fear": float(fear), "happy": float(happy), "sad": float(sad), "surprise": float(surprise), "neutral": float(neutral)}
+        # return self.choose_emotion([angry, fear, happy, sad, surprise, neutral])
 
     def choose_emotion(self, emotions):
         predicted_emotion_index = emotions.index(min(emotions))
@@ -50,3 +53,14 @@ class EmotionAnalyzer(object):
     def stop():
         self.video_capture.release()
         cv2.destroyAllWindows()
+
+def get_path(file_name):
+    return os.path.dirname(__file__) + file_name
+
+# model_json = get_path('model.json')
+# model_h5 = get_path('model.h5')
+# cascade = get_path('haarcascade_frontalface_default.xml')
+# emotion_analyzer = EmotionAnalyzer(model_json, model_h5, cascade)
+# emotions = emotion_analyzer.get_emotions()
+# print(emotions)
+# print(jsonify(emotions))
