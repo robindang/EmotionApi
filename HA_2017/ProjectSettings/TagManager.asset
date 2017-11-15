@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - LiveTrees
+  - DeadTrees
+  - Fire
+  - Sparks
+  - Flowers
+  - Plants
+  - Rain
   layers:
   - Default
   - TransparentFX

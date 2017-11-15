@@ -610,9 +610,9 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: d39938ad-f444-43ba-a73c-bd20344693bc
+  cloudProjectId: 383e7bef-ad27-41c2-a1ec-607cc81f3482
   projectName: HA_2017
-  organizationId: eleigh_unity
+  organizationId: aimeedotkim
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
