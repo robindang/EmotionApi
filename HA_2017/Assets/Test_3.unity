@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.22068256, g: 0.314113, b: 0.3543227, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -28141,7 +28141,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -196741828
+  randomSeed: 272714140
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -36307,8 +36307,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 462741855}
-  m_LocalRotation: {x: 0, y: 0.9873591, z: 0, w: -0.15849918}
-  m_LocalPosition: {x: -0.9, y: -13.30267, z: 89.5}
+  m_LocalRotation: {x: 0.061919555, y: 0.93022966, z: 0.18547986, w: -0.31054145}
+  m_LocalPosition: {x: 161.35495, y: -113.15398, z: 289.46042}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -36656,7 +36656,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -2080878648
+  randomSeed: 718427544
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -63006,7 +63006,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1822767170593048, guid: 3ff23f9e81966a04187eff9357429537, type: 2}
       propertyPath: m_Name
-      value: Particles_Fireflies (1)
+      value: Particles_Fireflies
       objectReference: {fileID: 0}
     - target: {fileID: 198852818290611048, guid: 3ff23f9e81966a04187eff9357429537,
         type: 2}
@@ -80295,7 +80295,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 249677426
+  randomSeed: -1538982913
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -91536,7 +91536,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: 1878481178
+  randomSeed: 747030305
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -102313,7 +102313,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1822767170593048, guid: 3ff23f9e81966a04187eff9357429537, type: 2}
       propertyPath: m_Name
-      value: Particles_Fireflies (2)
+      value: Particles_Fireflies
       objectReference: {fileID: 0}
     - target: {fileID: 198852818290611048, guid: 3ff23f9e81966a04187eff9357429537,
         type: 2}
@@ -102328,6 +102328,10 @@ Prefab:
     - target: {fileID: 4049334494975784, guid: 3ff23f9e81966a04187eff9357429537, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
       value: -53.548004
+      objectReference: {fileID: 0}
+    - target: {fileID: 1822767170593048, guid: 3ff23f9e81966a04187eff9357429537, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3ff23f9e81966a04187eff9357429537, type: 2}
@@ -113918,7 +113922,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 228379069
+  randomSeed: -1476082802
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -129206,7 +129210,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: 1339741075
+  randomSeed: -344087060
   InitialModule:
     serializedVersion: 3
     enabled: 1

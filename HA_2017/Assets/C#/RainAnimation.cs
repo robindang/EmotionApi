@@ -7,6 +7,7 @@ public class RainAnimation : MonoBehaviour {
 	private GameObject[] rains;
 	private GameObject water;
 	private GameObject flame;
+	private GameObject[] fireflies;
 
 
 	// Use this for initialization
@@ -15,6 +16,8 @@ public class RainAnimation : MonoBehaviour {
 		rains = GameObject.FindGameObjectsWithTag ("Rain");
 		water = GameObject.Find ("Water4Advanced");
 		flame = GameObject.Find ("Fire");
+		fireflies = GameObject.FindGameObjectsWithTag ("ParticlesFireflies");
+
 
 		StartCoroutine (Test ());
 	}
@@ -24,14 +27,14 @@ public class RainAnimation : MonoBehaviour {
 	}
 
 	IEnumerator Test() {
-		setFire (true);
+		setFireflies (true);
 		yield return new WaitForSeconds (5);
-		setFire (false);
+		setFireflies (false);
 
 	}
 		
 
-	void SetRain(bool visible) {
+	void SetRain (bool visible) {
 		foreach (GameObject rain in rains) {
 			rain.SetActive (visible);
 		}
@@ -57,7 +60,13 @@ public class RainAnimation : MonoBehaviour {
 		{
 		this.flame.SetActive (visible);
 		}
-	
+
+	void setFireflies (bool visible) {
+		foreach (GameObject firefly in fireflies) {
+			firefly.SetActive (visible);
+		}
+	}
 }
+
 
 
