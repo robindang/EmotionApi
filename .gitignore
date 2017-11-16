@@ -102,3 +102,4 @@ ENV/
 
 # custom
 HA_2017/Temp/
+.DS_Store
