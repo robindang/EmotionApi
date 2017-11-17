@@ -9,9 +9,7 @@ itsdangerous==0.24
 click>=5.0
 
 # Database
-Flask-SQLAlchemy==2.3.2
 psycopg2==2.7.3.2
-SQLAlchemy==1.1.14
 
 # Migrations
 Flask-Migrate==2.1.1
@@ -35,3 +33,14 @@ Flask-Caching>=1.0.0
 
 # Debug toolbar
 Flask-DebugToolbar==0.10.1
+
+# Emption analyzer
+np_utils
+keras
+six
+pbr
+funcsigs
+pyyaml
+indicoio
+h5py
+tensorflow

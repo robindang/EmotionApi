@@ -4,6 +4,17 @@ EmotionApi
 
 A flasky app.
 
+Quickstart
+----------
+So many things to install
+
+    virtualenv env
+    pip install --upgrade  https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.4.0-py2-none-any.whl
+    brew install opencv
+    brew install h5py
+    export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+
+    pip install h5py
 
 Quickstart
 ----------
